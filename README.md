@@ -6,6 +6,8 @@ The drive folder also contains weights for the models I've trained at various si
 There is also a data.zip that has the same dataset but in a zip format (making it easy to unzip it on Google Colab).
 
 ## Repository organization
+requirements.txt -- Package requirements.
+
 config.py -- Contains configuration options like the paths to the training data, which model to train, etc.
 
 data.py -- Implements the dataloader.
