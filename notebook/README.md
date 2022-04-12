@@ -1,11 +1,3 @@
-Guide to run the Notebook
-
-Prerequisites
-The dataset is available at -- https://drive.google.com/drive/folders/1HWVEEQMefz1nlmxbjhKJinBpRwp4QVC7?usp=sharing
-There are two folders --
-1. data - contains all the training / validation / testing data
-2. pretrained - contains all the pretrained model weights for the two models I compared. The pretrained weights are available for various sizes of the training set on which it has been trained ranging from 1000 to 17000.
-
 The notebook is arranged as follows --
 1. Imports -- Imports necessary packages
 2. Config / Globals -- Defines constants, file paths, sets seeds, etc
