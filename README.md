@@ -5,7 +5,7 @@ The dataset for the project is available on [Google drive.](https://drive.google
 The drive folder also contains weights for the models I've trained at various sizes of the training data from 1000 to 17000 samples at an interval of 1000 samples.
 There is also a data.zip that has the same dataset but in a zip format (making it easy to unzip it in Google Colab).
 
-## Repo orgainzation
+## Repository organization
 config.py -- Contains configuration options like the paths to the training data, which model to train, etc.
 
 data.py -- Implements the dataloader.
