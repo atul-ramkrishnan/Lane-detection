@@ -55,22 +55,22 @@ def get_prediction(model, test_loader, device, save_dir=None):
             target = target.to(device)
             output = model(data)
             pred = torch.max(output, dim=1)[1].squeeze()
-            lane_img = np.uint8(pred.numpy() * 255)
-            plt.figure(figsize=(100, 100))
+            lane_img = np.uint8(pred.cpu().numpy() * 255)
+            plt.figure(figsize=(16, 16))
             plt.subplot(num_inputs, 3, 3 * i + 1)
-            if model.__class__.__name__ in config.CNN_only_models:
-                plt.imshow(torch.permute(data.squeeze(), (1, 2, 0)))
+            if model.__class__.__name__ in CNN_only_models:
+                plt.imshow((torch.permute(data.squeeze(), (1, 2, 0))).cpu())
             else:
-                plt.imshow(torch.permute(data.squeeze()[-1], (1, 2, 0)))
+                plt.imshow((torch.permute(data.squeeze()[-1], (1, 2, 0))).cpu())
             plt.title('Input')
             plt.subplot(num_inputs, 3, 3 * i + 2)
-            plt.imshow(target.squeeze(), cmap='gray')
+            plt.imshow(target.squeeze().cpu(), cmap='gray')
             plt.title('Target')
             plt.subplot(num_inputs, 3, 3 * i + 3)
             plt.title('Output')
             plt.imshow(lane_img, cmap='gray')
             if save_dir is not None:
-                plt.savefig(save_dir + "/prediction_" + str(i) + ".png")
+                plt.savefig(save_dir + "prediction_" + str(i) + ".png")
             plt.show()
 
 
